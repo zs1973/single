@@ -28,7 +28,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PlanetSingle"
+rootProject.name = "single"
 include ':app'
 include(":library:utils")
 //include(':library:coreapp')
