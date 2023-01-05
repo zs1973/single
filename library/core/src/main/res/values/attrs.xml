@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--region公共属性-->
+    <!--边框宽度-->
+    <attr name="strokeWidth" format="dimension" />
+    <!--边框颜色-->
+    <attr name="strokeColor" format="color" />
+    <!--填充色  如果要支持设置 "#ffffff"这种值 format一定要加上color-->
+    <attr name="solidColor" format="color|reference" />
+    <!--圆角-->
+    <attr name="radius" format="dimension" />
+    <!--endregion-->
+
+    <!--region 可以设置背景和边框的TextView-->
+    <declare-styleable name="DrawableTextView">
+        <attr name="strokeWidth" />
+        <attr name="strokeColor" />
+        <attr name="solidColor" />
+        <attr name="radius" />
+    </declare-styleable>
+    <!--endregion-->
+
+    <!--region 左右对齐TextView-->
+    <declare-styleable name="JustifyTextView">
+        <attr name="numberWord" format="integer" />
+        <attr name="extraWords" format="string" />
+    </declare-styleable>
+    <!--endregion-->
+
+    <!--region 菜单item-->
+    <declare-styleable name="PlaMenuItemView">
+        <!--左icon-->
+        <attr name="icon" format="reference" />
+        <attr name="iconVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+            <enum name="gone" value="2" />
+        </attr>
+        <!--标题-->
+        <attr name="title" format="reference|string" />
+        <!--小标题-->
+        <attr name="subTitle" format="reference|string" />
+        <attr name="subTitleVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+            <enum name="gone" value="2" />
+        </attr>
+        <!--副icon-->
+        <attr name="subIcon" format="reference" />
+        <attr name="subIconVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+            <enum name="gone" value="2" />
+        </attr>
+        <!--tag-->
+        <attr name="tagText" format="string" />
+        <attr name="tagSolidColor" format="color" />
+        <attr name="tagCornerRadius" format="dimension" />
+        <attr name="tagVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+            <enum name="gone" value="2" />
+        </attr>
+        <!--右icon-->
+        <attr name="rightIcon" format="reference" />
+        <!--背景-->
+        <attr name="strokeWidth" />
+        <attr name="strokeColor" />
+        <attr name="solidColor" />
+        <attr name="radius" />
+        <attr name="topLeftRadius" format="dimension" />
+        <attr name="topRightRadius" format="dimension" />
+        <attr name="bottomLeftRadius" format="dimension" />
+        <attr name="bottomRightRadius" format="dimension" />
+
+    </declare-styleable>
+    <!--endregion-->
+
+    <!--region 验证码输入框-->
+    <declare-styleable name="VerificationCodeEditText">
+        <!--验证码数量-->
+        <attr name="codeLength" format="integer" />
+        <!---每个验证码的宽度-->
+        <attr name="codeWidth" format="dimension" />
+        <!---验证码之间的间隔-->
+        <attr name="codeMargin" format="dimension" />
+        <!--每个验证码的背景-->
+        <attr name="codeBackground" format="reference" />
+        <!--是否显示光标-->
+        <attr name="codeCursorVisible" format="boolean" />
+        <!--光标背景-->
+        <attr name="codeCursorDrawable" format="reference" />
+    </declare-styleable>
+    <!--endregion-->
+
+
+</resources>

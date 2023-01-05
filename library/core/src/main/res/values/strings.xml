@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pla_app_name">时间守护</string>
+    <string name="pla_app_slogan">感知时间流逝</string>
+    <string name="pla_login_agreement_tip">已阅读并同意服务协议和隐私政策</string>
+    <string name="pla_loading">加载中</string>
+    <string name="pla_copy_right">©2022 星球互连</string>
+    <string name="pla_install_wechat">请先安装微信客户端</string>
+
+    <string name="pla_dialog_title">提示</string>
+    <string name="pla_dialog_confirm">确定</string>
+    <string name="pla_dialog_cancel">取消</string>
+</resources>

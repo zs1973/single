@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/pla_shape_loading_dialog_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:indeterminate="true"
+                app:indicatorDirectionCircular="counterclockwise"
+                app:indicatorSize="25dp"
+                app:showAnimationBehavior="outward"
+                app:trackCornerRadius="2dp"
+                app:trackThickness="2dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tipText"
+                style="@style/PlaTextTitle.Tiny"
+                android:layout_marginTop="6dp"
+                android:text="@string/pla_loading"
+                android:textColor="@color/onPrimary" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

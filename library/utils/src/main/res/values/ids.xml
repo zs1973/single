@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <item type="id" name="status_bar_util_fake_status_bar_view"/>-->
+<!--    <item type="id" name="status_bar_util_translucent_view"/>-->
+
+    //监听键盘弹出事件
+<!--    <item name="keyboard_listener" type="id"/>-->
+<!--    <item name="visible_height" type="id"/>-->
+<!--    <item name="origin_visible_height" type="id"/>-->
+<!--    <item name="origin_height" type="id"/>-->
+<!--    <item name="open_keyboard" type="id"/>-->
+<!--    <item name="close_keyboard" type="id"/>-->
+<!--    <item name="keyboard_opened" type="id"/>-->
+
+</resources>

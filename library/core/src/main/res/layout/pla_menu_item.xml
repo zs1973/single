@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/icon_img"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:src="@mipmap/pla_ic_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+
+        <TextView
+            android:id="@+id/title_tv"
+            style="@style/PlaTextTitle.Normal"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/icon_img"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="菜单标题" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_icon_img"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/subtitle_tv"
+                style="@style/PlaTextAssist.Tiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="副标题" />
+
+            <ImageView
+                android:id="@+id/sub_icon_img"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                tools:src="@mipmap/pla_ic_logo"
+                tools:ignore="ContentDescription" />
+
+            <com.planet.core.view.DrawableTextView
+                android:id="@+id/tag_drawable_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:paddingStart="4dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="2dp"
+                tools:text="专业版"
+                android:textColor="@color/onPrimary"
+                android:textSize="10sp"
+                android:visibility="visible"
+                app:radius="2dp"
+                app:solidColor="@color/primary"
+                app:strokeWidth="1dp"
+                tools:ignore="SmallSp" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/right_icon_img"
+            style="@style/PlaSecondaryMenuIcon"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pla_ic_arrow_right"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

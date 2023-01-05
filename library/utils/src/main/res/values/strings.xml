@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="util_nav_fail">导航失败，需手动设置授予此权限。</string>
+
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="pla_corner_radius_big">20</integer>
+    <integer name="pla_corner_radius_normal">15</integer>
+    <integer name="pla_corner_radius_small">10</integer>
+    <integer name="pla_corner_radius_tiny">6</integer>
+    <integer name="pla_corner_radius_super_tiny">4</integer>
+
+    <integer name="pla_stroke_width_thin">1</integer>
+    <integer name="pla_stroke_width_bold">2</integer>
+</resources>

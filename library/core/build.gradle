@@ -1,0 +1,113 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdk build_versions.compileSdk
+    defaultConfig {
+        minSdk build_versions.minSdk
+        targetSdk build_versions.targetSdk
+        versionCode build_versions.versionCode
+        versionName build_versions.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // 引入的部分三方框架注解编译器需要 kotlin 1.8
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        //移除编译器警告，也可在模块下的gradle.properties中设置，参看本模块下的gradle.properties文件
+//        freeCompilerArgs += [
+//                "-Xskip-prerelease-check",
+//                "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+//                "-Xuse-experimental=androidx.compose.animation.ExperimentalAnimationApi",
+//                "-Xopt-in=androidx.compose.material.ExperimentalMaterialApi",
+//                "-Xopt-in=com.google.accompanist.pager.ExperimentalPagerApi",
+//                "-Xopt-in=kotlin.RequiresOptIn",
+//        ]
+    }
+
+}
+
+dependencies {
+
+    api project(':library:network')
+    api project(':library:imageloader')
+    api project(':library:floatingview')
+    api project(':library:mpchart')
+    api project(':library:logreporter')
+    api project(':library:matisse')
+    api project(':library:utils')
+
+    api(dep.androidx.appcompat)
+    api(dep.androidx.appcompatResource)
+    api(dep.androidx.lifecycle)
+    api(dep.androidx.constraintLayout)
+    api(dep.androidx.viewPager2)
+    api(dep.androidx.swipeRefreshLayout)
+    api(dep.androidx.material)
+    api(dep.androidx.flexBox)
+    api(dep.androidx.recyclerview)
+
+    api(dep.ktx.core)
+    api(dep.ktx.activity)
+    api(dep.ktx.fragment)
+    api(dep.ktx.livedata)
+    api(dep.ktx.livedatacore)
+    api(dep.ktx.reactivestreams)
+    api(dep.ktx.runtime)
+    api(dep.ktx.viewmodel)
+//    api(dep.androidx.navigationUi)
+//    api(dep.androidx.navigationRuntime)
+//    api(dep.androidx.navigationFragment)
+
+
+//    api(dep.androidx.paging3)
+
+    api(dep.kotlin.kotlin)
+    api(dep.kotlin.kotlinReflect)
+    api(dep.kotlin.kotlinCoroutine)
+    api(dep.kotlin.kotlinCoroutineAndroid)
+
+    api(dep.other.ultimateBarX)
+    api(dep.other.unPeekLiveData)
+    api(dep.other.adapterHelper)
+    api(dep.other.brv)
+    //api(dep.other.xpermission)
+    api(dep.other.colorpicker)
+    api(dep.other.magicIndicator)
+    api(dep.other.spannable)
+    api(dep.other.cascade)
+    api(dep.other.intervel)
+    api(dep.other.shadowlayout) { exclude group: 'com.github.bumptech.glide', module: 'glide' }
+    api(dep.other.xtoast)
+    //------------------------------------------本地数据存储---------------------------------------
+    api(dep.room.runtime)
+    api(dep.room.ktx)
+    api(dep.room.paging)
+    api(dep.datastore.dataStoreProto)
+    api(dep.datastore.protobuf)
+    //TODO 依赖格式待优化至dep配置文件
+    if (rootProject.property("useCodeLocator").toBoolean()) {
+        debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-all:2.0.0"
+    }
+}

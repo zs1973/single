@@ -1,0 +1,167 @@
+/**
+ * 此gradle文件用来定义三方库版本
+ * KTX 扩展程序列表: https://developer.android.com/kotlin/ktx/extensions-list
+ **/
+ext.deps = [:]
+
+def versions = [:]
+
+versions.appcompat = "1.5.1"
+versions.annotation = "1.4.0"
+versions.constraintLayout = "2.1.1"
+versions.viewPager2 = "1.1.0-alpha01"
+versions.swipeRefreshLayout = "1.1.0"
+versions.paging3 = "3.1.0"
+versions.material = "1.6.1"
+versions.flexBox = "3.0.0"
+versions.recyclerview = "1.2.1"
+versions.UltimateBarX = "0.8.0"
+versions.navigation = "2.3.5"
+versions.work = "2.7.1"
+versions.lifecycle = "2.4.0"
+
+//lifecycleCommonJava8
+
+versions.hiltAndroid = "2.44.2"
+versions.hiltLifecycle = "1.0.0-alpha03"
+versions.room = "2.4.2"
+versions.kotlin = "1.7.20"
+versions.kotlin_coroutines_version = "1.6.4"
+versions.retrofit2 = "2.9.0"
+versions.okhttp3 = "4.7.2"
+versions.moshi = "1.12.0"
+versions.glide = "4.11.0"
+
+versions.core_ktx = "1.9.0"
+versions.activity_ktx = "1.6.1"
+versions.fragment_ktx = "1.5.4"
+versions.matisse = "0.5.4"
+versions.unPeekLiveData = "5.0.1-beta1"
+versions.imageCompressor = "3.0.1"
+versions.qiniuSdk = "8.0.2"
+versions.multidex = "2.0.1"
+versions.arouter = "1.5.2"
+
+def dep = [:]
+
+//Androidx
+def androidx = [:]
+androidx.appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
+androidx.annotation = "androidx.annotation:annotation:$versions.annotation"
+androidx.appcompatResource = "androidx.appcompat:appcompat-resources:$versions.appcompat"
+androidx.constraintLayout = "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
+androidx.viewPager2 = "androidx.viewpager2:viewpager2:$versions.viewPager2"
+androidx.swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:$versions.swipeRefreshLayout"
+androidx.material = "com.google.android.material:material:$versions.material"
+androidx.flexBox = "com.google.android.flexbox:flexbox:$versions.flexBox"
+androidx.recyclerview = "androidx.recyclerview:recyclerview:$versions.recyclerview"
+androidx.navigationUi = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+androidx.navigationRuntime = "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
+androidx.navigationFragment = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+androidx.paging3 = "androidx.paging:paging-runtime:$versions.paging3"
+androidx.multidex = "androidx.multidex:multidex:$versions.multidex"
+androidx.lifecycle = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+androidx.work = "androidx.work:work-runtime-ktx:$versions.work"
+dep.androidx = androidx
+
+def ktx = [:]
+ktx.livedatacore = "androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1"
+ktx.livedata = "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+ktx.reactivestreams = "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.5.1"
+ktx.runtime = "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+ktx.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+ktx.core = "androidx.core:core-ktx:$versions.core_ktx"
+ktx.activity = "androidx.activity:activity-ktx:$versions.activity_ktx"
+ktx.fragment = "androidx.fragment:fragment-ktx:$versions.fragment_ktx"
+dep.ktx = ktx
+
+//依赖注入框架
+def hilt = [:]
+hilt.hiltAndroid = "com.google.dagger:hilt-android:$versions.hiltAndroid"
+hilt.hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$versions.hiltAndroid"
+hilt.hiltLifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:$versions.hiltLifecycle"
+hilt.hiltLifecycleCompiler = "androidx.hilt:hilt-lifecycle-viewmodel:$versions.hiltLifecycle"
+dep.hilt = hilt
+
+//本地数据存储（sqlite）
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+room.ktx = "androidx.room:room-ktx:$versions.room"
+room.paging = "androidx.room:room-paging:$versions.room"
+dep.room = room
+
+//本地数据存储（xml）
+def datastore = [:]
+datastore.dataStoreProto = "androidx.datastore:datastore:1.0.0"
+datastore.protobuf = "com.google.protobuf:protobuf-javalite:3.10.0"
+dep.datastore = datastore
+
+//kotlin
+def kotlin = [:]
+kotlin.kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+kotlin.kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin"
+kotlin.kotlinCoroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotlin_coroutines_version"
+kotlin.kotlinCoroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.kotlin_coroutines_version"
+dep.kotlin = kotlin
+
+def network = [:]
+network.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit2"
+network.converterMoshi = "com.squareup.retrofit2:converter-moshi:$versions.retrofit2"
+network.cconverterGson = "com.squareup.retrofit2:converter-gson:$versions.retrofit2"
+network.okHttp3LogginIntercepter = "com.squareup.okhttp3:logging-interceptor:4.7.2"
+dep.network = network
+
+//配合kotlin 解析json
+def moshi = [:]
+moshi.moshi = "com.squareup.moshi:moshi:$versions.moshi"
+moshi.moshi_kotlin = "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+dep.moshi = moshi
+
+//加载图片
+def glide = [:]
+glide.glide = "com.github.bumptech.glide:glide:$versions.glide"
+glide.glideCompiler = "com.github.bumptech.glide:compiler:$versions.glide"
+dep.glide = glide
+
+//其他三方库
+def other = [:]
+other.matisse = "com.github.ooftf:matisse:0.5.4"//选择图片库
+other.unPeekLiveData = "com.kunminx.arch:unpeek-livedata:7.2.0-beta1"//防止LiveData数据倒灌
+other.imageCompressor = "id.zelory:compressor:3.0.1"//图片压缩
+other.qiniuUpload = "com.qiniu:qiniu-android-sdk:8.0.2"//上传文件到七牛云
+other.ultimateBarX = "com.gitee.zackratos:UltimateBarX:0.8.0"//沉浸式状态栏
+other.arouter = "com.alibaba:arouter-api:$versions.arouter"//组件化下界面路由
+other.arouterCompier = "com.alibaba:arouter-compiler:$versions.arouter"
+other.adapterHelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7"
+other.umengcommon = "com.umeng.umsdk:common:9.4.7"// 友盟 必选
+other.umengasms = "com.umeng.umsdk:asms:1.4.1"// 友盟 必选
+other.umengapm = "com.umeng.umsdk:apm:1.5.2"// 友盟 错误分析升级为独立SDK，看crash数据请一定
+other.bugly = "com.tencent.bugly:crashreport:4.0.4"
+other.appUpdate = "com.github.azhon:AppUpdate:4.0.0"// 应用内更新
+other.wechatsdk = "com.tencent.mm.opensdk:wechat-sdk-android:6.8.0"//微信分享
+other.brv = "com.github.liangjingkanji:BRV:1.3.78"//rv列表
+other.xpermission = "com.github.getActivity:XXPermissions:16.2"
+other.colorpicker = "com.jaredrummler:colorpicker:1.1.0" //颜色拾取器
+other.magicIndicator = "com.github.hackware1993:MagicIndicator:1.7.0"
+other.walle = "com.github.Petterpx.walle:library:1.0.3"//美团多渠道打包
+other.spannable = "com.github.liangjingkanji:spannable:1.2.3"
+other.iplayer = "com.github.hty527.iPlayer:iplayer:2.1.1"
+other.iplayer_cache = "com.github.hty527.iPlayer:cache:2.1.1"
+other.iplayer_exo = "com.github.hty527.iPlayer:exo:2.1.1"
+other.shadowlayout = "com.github.lihangleo2:ShadowLayout:3.3.2"
+other.cascade = "me.saket.cascade:cascade:2.0.0-beta1"
+other.intervel = "com.github.liangjingkanji:Interval:1.0.1"
+other.xtoast = "com.github.getActivity:XToast:8.6"
+dep.other = other
+ext.dep = dep
+
+def build_versions = [:]
+build_versions.applicationId = "com.planet.planetsingle"
+build_versions.compileSdk = 33
+build_versions.minSdk = 23
+build_versions.targetSdk = 29
+build_versions.versionCode = 15
+build_versions.versionName = "0.3.2"
+build_versions.jvmTarget = "1.8"
+ext.build_versions = build_versions

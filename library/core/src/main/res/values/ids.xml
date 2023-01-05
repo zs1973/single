@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region 点击防抖-->
+    <item name="triggerDelayKey" type="id" />
+    <item name="triggerLastTimeKey" type="id" />
+    <!--endregion-->
+</resources>

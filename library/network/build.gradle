@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+
+    compileSdk build_versions.compileSdk
+    defaultConfig {
+        minSdk build_versions.minSdk
+        targetSdk build_versions.targetSdk
+        versionCode build_versions.versionCode
+        versionName build_versions.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //是否输出日志 在根目录下的gradle.properties中配置
+            buildConfigField("boolean", "logDebug", "false")
+            buildConfigField("String", "baseUrl", apiReleaseUrl)
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //是否输出日志
+            buildConfigField("boolean", "logDebug", "false")
+            buildConfigField("String", "baseUrl", apiDebugUrl)
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation(project(':library:utils'))
+    implementation(dep.androidx.annotation)
+    implementation(dep.kotlin.kotlin)
+    implementation(dep.kotlin.kotlinReflect)
+    implementation(dep.kotlin.kotlinCoroutine)
+    implementation(dep.kotlin.kotlinCoroutineAndroid)
+    /*请求服务器接口*/
+    api(dep.network.retrofit)
+    api(dep.network.converterMoshi)
+    api(dep.network.okHttp3LogginIntercepter)
+    /*Json bean处理*/
+    api(dep.moshi.moshi)
+    api(dep.moshi.moshi_kotlin)
+    /*注入工具*/
+    implementation(dep.hilt.hiltAndroid)
+    kapt(dep.hilt.hiltAndroidCompiler)
+    //api(dep.hilt.hiltLifecycleViewModel)
+    //kapt(dep.hilt.hiltLifecycleCompiler)
+}

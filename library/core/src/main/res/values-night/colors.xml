@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="orange">#FF9800</color>
+    <color name="warning">#FF5722</color>
+    <color name="light_gray">#FAFAFA</color>
+
+    <color name="pla_notification_bg">#191C1A</color>
+    <color name="pla_status_bar_color">#191C1A</color>
+
+    <!--region 文字颜色-->
+    <!--标题-->
+    <color name="pla_text_title">#FFFFFF</color>
+    <!--内容-->
+    <color name="pla_text_body">#F1F1F1</color>
+    <!--辅助内容-->
+    <color name="pla_text_assist">#A6A5A5</color>
+    <!--说明内容-->
+    <color name="pla_text_description">#D3D3D3</color>
+    <!--endregion-->
+
+    <!--region 边框颜色-->
+    <color name="pla_border_light">#1A191C1A</color>
+    <color name="pla_border_middle">#F3F3F3</color>
+    <color name="pla_border_dark">#F2F2F2</color>
+    <!--endregion-->
+
+    <!--region 分割线颜色-->
+    <color name="pla_divider_light">#1D211E</color>
+    <color name="pla_divider_middle">#EDEDED</color>
+    <color name="pla_divider_dark">#DEDEDE</color>
+    <!--endregion-->
+
+    <!--region 按钮颜色-->
+    <!--按钮背景色-->
+    <color name="pla_btn_positive_bg">@color/primary</color>
+    <color name="pla_btn_negative_bg">#666666</color>
+    <color name="pla_btn_disable_bg">#999999</color>
+    <!--按钮文字颜色-->
+    <color name="pla_btn_positive_text">#ffffff</color>
+    <color name="pla_btn_negative_text">#ffffff</color>
+    <color name="pla_btn_disable_text">#333333</color>
+    <!--endregion-->
+
+    <!--region 主题颜色-->
+    <color name="primary">#11D180</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="primaryContainer">#11D180</color>
+    <color name="onPrimaryContainer">#FFFFFF</color>
+    <color name="secondary">#B6CCBA</color>
+    <color name="onSecondary">#213528</color>
+    <color name="secondaryContainer">#374B3D</color>
+    <color name="onSecondaryContainer">#D1E8D5</color>
+    <color name="tertiary">#A3CDDB</color>
+    <color name="onTertiary">#043540</color>
+    <color name="tertiaryContainer">#222623</color>
+    <color name="onTertiaryContainer">#FFFFFF</color>
+    <color name="error">#FFB4A9</color>
+    <color name="errorContainer">#930006</color>
+    <color name="onError">#680003</color>
+    <color name="onErrorContainer">#FFDAD4</color>
+    <color name="background">#191C1A</color>
+    <color name="onBackground">#E1E3DE</color>
+    <color name="surface">#191C1A</color>
+    <color name="onSurface">#E1E3DE</color>
+    <color name="surfaceVariant">#404942</color>
+    <color name="onSurfaceVariant">#C0C9C0</color>
+    <color name="outline">#8A938A</color>
+    <color name="inverseOnSurface">#191C1A</color>
+    <color name="inverseSurface">#E1E3DE</color>
+    <color name="inversePrimary">#006D3E</color>
+    <color name="shadow">#000000</color>
+    <color name="primaryInverse">#006D3E</color>
+    <!--endregion-->
+
+</resources>

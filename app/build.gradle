@@ -1,0 +1,187 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'walle'
+apply plugin: 'org.jetbrains.dokka'
+apply plugin: 'com.google.protobuf'
+
+android {
+    //https://developer.android.google.cn/studio/build/configure-app-module#set-namespace
+    //此命名空间用作其生成的 R 和 BuildConfig 类的 Java 或 Kotlin 软件包名称
+    namespace 'com.planet.single'
+    compileSdk build_versions.compileSdk
+
+    defaultConfig {
+        applicationId build_versions.applicationId
+        minSdk build_versions.minSdk
+        targetSdk build_versions.targetSdk
+        versionCode build_versions.versionCode
+        versionName build_versions.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resourceConfigurations.addAll(["en", "fr", "zh"])
+        multiDexEnabled true
+        flavorDimensions "channel"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation"  : "${project.projectDir}/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"
+                ]
+            }
+        }
+
+        ndk {
+            //兼容包：arm架构 32 和 64位
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    signingConfigs {
+        //以下秘钥配置信息在根目录keystore.properties文件中定义
+        def keystorePropertiesFile = rootProject.file("keystore.properties")
+        def keystoreProperties = new Properties()
+        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+        release {
+            storeFile file("${rootProject.file(keystoreProperties['projectStoreFileName'])}")
+            storePassword keystoreProperties['projectStorePassword']
+            keyAlias keystoreProperties['projectKeyAlias']
+            keyPassword keystoreProperties['projectKeyPassword']
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+
+//        debug {
+//            //测试微信登录需要使用此签名文件签名
+//            storeFile file("../debug.keystore")
+//        }
+
+    }
+
+    buildTypes {
+        release {
+            //debuggable true
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            buildConfigField("boolean", "logDebug", "false")
+            buildConfigField("String", "baseUrl", apiReleaseUrl)
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            //applicationIdSuffix ".debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            buildConfigField("boolean", "logDebug", "true")
+            buildConfigField("String", "baseUrl", apiDebugUrl)
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    /*指定kotlin使用的java版本*/
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    //dokka生成文档配置规则
+    dokkaHtml {
+        outputDirectory.set(new File(rootDir, "dokkadocs"))
+        //设置输出文档的 module
+        moduleName.set("library")
+        dokkaSourceSets {
+            configureEach { // Or source set name, for single-platform the default source sets are `main` and `test`
+                // Used to remove a source set from documentation, test source sets are suppressed by default
+                suppress.set(false)
+                // Use to include or exclude non public members
+                includeNonPublic.set(true)
+                // Do not output deprecated members. Applies globally, can be overridden by packageOptions
+                skipDeprecated.set(true)
+                // Emit warnings about not documented members. Applies globally, also can be overridden by packageOptions
+                reportUndocumented.set(true)
+                // Do not create index pages for empty packages
+                skipEmptyPackages.set(true)
+                // This name will be shown in the final output
+                displayName.set("JVM")
+                // Platform used for code analysis. See the "Platforms" section of this readme
+                platform.set(org.jetbrains.dokka.Platform.jvm)
+                // Used for linking
+                // to JDK documentation
+                jdkVersion.set(8)
+                sourceLink {
+                    //项目根目录的相对路径(在其中分别执行gradle),这里我们要执行的library
+                    localDirectory.set(file("com/secoo/coobox/library"))
+                    // URL showing where the source code can be accessed through the web browser
+                    remoteUrl.set(new URL("https://github.com/cy6erGn0m/vertx3-lang-kotlin/blob/master/src/main/kotlin"))
+                    // Suffix which is used to append the line number to the URL. Use #L for GitHub
+                    remoteLineSuffix.set("#L")
+                }
+                // 配置sample code 的存放目录
+                samples.from("$rootDir/library/src/androidTest/java/com/secoo/coobox/library/samples/")
+                // Disable linking to online kotlin-stdlib documentation
+                noStdlibLink.set(true)
+                // Disable linking to online JDK documentation
+                noJdkLink.set(false)
+                // Disable linking to online Android documentation (only applicable for Android projects)
+                noAndroidSdkLink.set(true)
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':library:core')
+    implementation(dep.androidx.multidex)
+    implementation(dep.hilt.hiltAndroid)
+    kapt(dep.hilt.hiltAndroidCompiler)
+    implementation(dep.other.walle)
+    implementation(dep.other.wechatsdk)
+    //测试
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}
+
+/*DataStoreProto相关配置*/
+protobuf {
+    protoc {
+        if (osdetector.os == "osx") {
+            artifact = 'com.google.protobuf:protoc:3.14.0:osx-x86_64'
+        } else {
+            artifact = 'com.google.protobuf:protoc:3.14.0'
+        }
+    }
+    generateProtoTasks {
+        all().forEach { task ->
+            task.plugins {
+                create("java") {
+                    option("lite")
+                }
+            }
+        }
+    }
+}
+
+//多渠道打包-美团 walle
+walle {
+    apkOutputFolder = new File("${project.buildDir}/channel-apk")
+    apkFileNameFormat = '${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk'
+    //configFile与channelFile两者必须存在一个，否则无法生成渠道包。两者都存在时优先执行configFile
+    channelFile = new File("${project.getProjectDir()}/channel")
+    //configFile = new File("${project.getProjectDir()}/config.json")
+}

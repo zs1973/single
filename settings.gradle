@@ -1,0 +1,42 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+pluginManagement {
+    //gradle脚本依赖的仓库
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    //项目库依赖的仓库
+    repositories {
+        google()
+        mavenCentral()
+        //仓库加速
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        //美团多渠道打包
+        maven { url 'https://jitpack.io' }
+        //友盟统计
+        maven { url 'https://repo1.maven.org/maven2/' }
+    }
+}
+
+rootProject.name = "PlanetSingle"
+include ':app'
+include(":library:utils")
+//include(':library:coreapp')
+include(":library:network")
+include(':library:imageloader')
+include(':library:floatingview')
+include(':library:logreporter')
+include(':library:core')
+//include(':library:coreexport')
+include(':library:mpchart')
+include(':library:matisse')
