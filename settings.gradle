@@ -31,12 +31,10 @@ dependencyResolutionManagement {
 rootProject.name = "single"
 include ':app'
 include(":library:utils")
-//include(':library:coreapp')
 include(":library:network")
 include(':library:imageloader')
 include(':library:floatingview')
 include(':library:logreporter')
 include(':library:core')
-//include(':library:coreexport')
 include(':library:mpchart')
 include(':library:matisse')

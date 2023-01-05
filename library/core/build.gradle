@@ -35,15 +35,6 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
-        //移除编译器警告，也可在模块下的gradle.properties中设置，参看本模块下的gradle.properties文件
-//        freeCompilerArgs += [
-//                "-Xskip-prerelease-check",
-//                "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
-//                "-Xuse-experimental=androidx.compose.animation.ExperimentalAnimationApi",
-//                "-Xopt-in=androidx.compose.material.ExperimentalMaterialApi",
-//                "-Xopt-in=com.google.accompanist.pager.ExperimentalPagerApi",
-//                "-Xopt-in=kotlin.RequiresOptIn",
-//        ]
     }
 
 }

@@ -31,11 +31,7 @@ android {
 }
 
 dependencies {
-    if (useArrMode.toBoolean()) {
-        implementation("com.planet.utils:utils:1.0.0")
-    } else {
-        implementation(project(':library:utils'))
-    }
+    implementation(project(':library:utils'))
     api(dep.glide.glide)
     kapt(dep.glide.glideCompiler)
 }
