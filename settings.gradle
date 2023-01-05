@@ -4,11 +4,10 @@ pluginManagement {
     //gradle脚本依赖的仓库
     repositories {
         gradlePluginPortal()
-        google()
+        //google()
         mavenCentral()
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         maven { url 'https://jitpack.io' }
     }
 }
@@ -16,7 +15,7 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     //项目库依赖的仓库
     repositories {
-        google()
+        //google()
         mavenCentral()
         //仓库加速
         maven { url 'https://maven.aliyun.com/repository/google' }
