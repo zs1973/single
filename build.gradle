@@ -2,9 +2,9 @@
 buildscript {
     //gradle依赖的脚本
     dependencies {
-        //美团多渠道打包第①步，第②步再在项目目录build.gradle文件中配置
+        //美团多渠道打包第①步，第②步在项目目录build.gradle文件中配置
         classpath 'com.github.Petterpx.walle:plugin:1.0.3'
-        //生成文档配置第①步，第②步再在项目目录build.gradle文件中配置
+        //生成文档配置第①步，第②步在项目目录build.gradle文件中配置
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.4.10.2"
     }
 }

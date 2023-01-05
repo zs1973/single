@@ -1,5 +1,5 @@
 /**
- * 此gradle文件用来定义三方库版本
+ * 此gradle文件用来定义引用库版本
  * KTX 扩展程序列表: https://developer.android.com/kotlin/ktx/extensions-list
  **/
 ext.deps = [:]
