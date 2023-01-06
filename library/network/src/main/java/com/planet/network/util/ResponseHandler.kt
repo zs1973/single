@@ -24,14 +24,14 @@ enum class ErrorCodes(val code: Int) {
 /**
  * 统一处理API请求结果
  *
- * - [参考medium文章](https://medium.com/@harmittaa/retrofit-2-6-0-with-koin-and-coroutines-network-error-handling-a5b98b5e5ca0)
+ * [点击查看参考medium文章](https://medium.com/@harmittaa/retrofit-2-6-0-with-koin-and-coroutines-network-error-handling-a5b98b5e5ca0)
  */
 open class ResponseHandler @Inject constructor() {
 
     private val mTag = this.javaClass.name
 
     fun <T> handleSuccess(data: ApiResponse<T?>): Resource<T> {
-        return when (data.code) {
+        return when (data.errorCode) {
             ApiResponseCode.Success.code -> {
                 Resource.success(data.data)
             }
@@ -40,7 +40,7 @@ open class ResponseHandler @Inject constructor() {
             //    Resource.error(data.message)
             //}
             else -> {
-                Resource.error("${data.code}:${data.message}")
+                Resource.error("${data.errorCode}:${data.errorMsg}")
             }
         }
     }
@@ -93,8 +93,7 @@ open class ResponseHandler @Inject constructor() {
     private suspend fun handLoginExpire() {
         withContext(Dispatchers.Main) {
             ToastUtils.showShort(AppUtils.getApp().getString(R.string.planet_login_expire))
-            val targetActivity =
-                "com.planet.timesaver/com.planet.main.ui.activity.ThirdLoginActivity"
+            val targetActivity = "com.planet.timesaver/com.planet.main.ui.activity.ThirdLoginActivity"
             val intent = Intent()
                 .apply {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP

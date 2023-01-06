@@ -2,51 +2,51 @@ package com.planet.single.ui
 
 import android.os.Bundle
 import android.widget.Button
-import androidx.lifecycle.lifecycleScope
-import com.planet.core.app.getAppViewModel
+import androidx.activity.viewModels
 import com.planet.core.ui.ImmersionActivity
-import com.planet.single.ui.vm.MainVm
+import com.planet.core.ui.dialog.SimpleDialogFragment
+import com.planet.core.ui.dialog.TextDialogFragment
 import com.planet.single.R
 import com.planet.single.databinding.ActivityMainBinding
+import com.planet.single.ui.vm.MainVm
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : ImmersionActivity<ActivityMainBinding>() {
 
-
-
-    val mVm: MainVm by lazy { getAppViewModel() }
+    private val mVm: MainVm by viewModels()
 
     override fun initViewBinding(): ActivityMainBinding {
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun initData(savedInstanceState: Bundle?) {
-
-        lifecycleScope.launch{
-
-        }
-    }
+    override fun initData(savedInstanceState: Bundle?) {}
 
     override fun listeners() {
         findViewById<Button>(R.id.btn).setOnClickListener {
-            mVm.send()
-//            startActivity(Intent(this, TestActivity::class.java))
+            mVm.getKind()
+
+            TextDialogFragment.build {
+                title = "标题"
+                content = "内容"
+                cancelText = "取消"
+                confirmText = "确定"
+                hideCancelBtn = true
+                confirmClickListener = object : SimpleDialogFragment.OnConfirmClickListener {
+                    override fun onConfirm(dialogFragment: SimpleDialogFragment) {
+                        dialogFragment.dismiss()
+                    }
+                }
+            }.show(supportFragmentManager, null)
+            //startActivity(Intent(this, TestActivity::class.java))
         }
     }
 
-    override fun doBusiness() {
-    }
+    override fun doBusiness() {}
 
-    override fun observerData() {
-    }
+    override fun observerData() {}
 
-    override fun fitWindow(): Boolean {
-        return true
-    }
+    override fun fitWindow(): Boolean = true
 
-    override fun colorRes(): Int {
-        return R.color.white
-    }
+    override fun colorRes(): Int = com.planet.core.R.color.pla_status_bar_color
 }

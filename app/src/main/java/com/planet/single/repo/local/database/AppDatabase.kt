@@ -2,10 +2,8 @@ package com.planet.single.repo.local.database
 
 import android.content.Context
 import androidx.room.*
-import androidx.room.migration.AutoMigrationSpec
 import com.planet.single.repo.local.database.dao.AppDao
 import com.planet.single.repo.local.database.entities.App
-import com.planet.single.repo.local.database.migration.*
 
 /**
  *作者：张硕
@@ -23,11 +21,11 @@ import com.planet.single.repo.local.database.migration.*
     version = 1,
     exportSchema = true,
     autoMigrations = [
-        AutoMigration(
-            from = 1,
-            to = 2,
-            spec = AppDatabase.AutoMigration1to2::class
-        )
+//        AutoMigration(
+//            from = 1,
+//            to = 2,
+//            spec = AppDatabase.AutoMigration1to2::class
+//        )
     ]
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -37,12 +35,12 @@ abstract class AppDatabase : RoomDatabase() {
     /**
      * 重命名字段
      */
-    @RenameColumn(
-        tableName = "app",
-        fromColumnName = "is_logic_delete",
-        toColumnName = "stop_watch"
-    )
-    class AutoMigration1to2 : AutoMigrationSpec
+//    @RenameColumn(
+//        tableName = "app",
+//        fromColumnName = "is_logic_delete",
+//        toColumnName = "stop_watch"
+//    )
+//    class AutoMigration1to2 : AutoMigrationSpec
 
     companion object {
         //单例
@@ -57,16 +55,16 @@ abstract class AppDatabase : RoomDatabase() {
                     Room.databaseBuilder(
                         context.applicationContext,
                         AppDatabase::class.java,
-                        "module_quota.db"
+                        "single.db"
                     ).addMigrations(
-                        Migration2T3,
-                        Migration3T4,
-                        Migration4T5,
-                        Migration5T6,
-                        Migration6T7,
-                        Migration7T8,
-                        Migration8T9,
-                        Migration9T10
+//                        Migration2T3,
+//                        Migration3T4,
+//                        Migration4T5,
+//                        Migration5T6,
+//                        Migration6T7,
+//                        Migration7T8,
+//                        Migration8T9,
+//                        Migration9T10
                     ).build()
                 INSTANCE = instance
                 instance

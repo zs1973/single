@@ -1,59 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#000000</color>
-    <color name="transparent">#00000000</color>
-    <color name="orange">#FF9800</color>
-    <color name="warning">#FF5722</color>
-    <color name="deep_gray">#333333</color>
-    <color name="light_gray">#FAFAFA</color>
 
     <color name="pla_white">#ffffff</color>
     <color name="pla_black">#000000</color>
-
-    <color name="pla_notification_bg">#ffffff</color>
+    <color name="pla_transparent">#00000000</color>
+    <color name="pla_orange">#FF9800</color>
+    <color name="pla_warning">#D32F2F</color>
+    <color name="pla_deep_gray">#333333</color>
+    <color name="pla_light_gray">#FAFAFA</color>
     <!--由于使用的沉浸式状态栏框架影响，状态栏会自动使用标题栏设置的背景-->
-    <color name="pla_status_bar_color">#ffffff</color>
+    <color name="pla_status_bar_color">#F8F9FA</color>
 
-    <!--region 标题-->
-    <color name="pla_text_title">#010101</color>
-    <!--内容-->
-    <color name="pla_text_body">#010101</color>
+    <!--region **********文字颜色**********-->
+    <color name="pla_text_primary">#010101</color>
     <color name="pla_text_assist">#818181</color>
     <color name="pla_text_description">#D2D1D1</color>
     <!--endregion-->
 
-    <!--region 按钮文字颜色-->
-    <color name="pla_btn_positive_text">#ffffff</color>
-    <color name="pla_btn_negative_text">#ffffff</color>
-    <color name="pla_btn_disable_text">#333333</color>
+    <!--region **********分割线、边框颜色**********-->
+    <color name="pla_line_light">#F2F2F2</color>
+    <color name="pla_line_middle">#F5F5F5</color>
+    <color name="pla_line_deep">#C9C9C9</color>
     <!--endregion-->
 
-    <!--region 按钮背景颜色-->
-    <color name="pla_btn_positive_bg">@color/primary</color>
-    <color name="pla_btn_negative_bg">#666666</color>
-    <color name="pla_btn_disable_bg">#999999</color>
-    <!--endregion-->
-
-    <!--region 分割线颜色-->
-    <color name="pla_divider_light">#E6E6E6</color>
-    <color name="pla_divider_middle">#EDEDED</color>
-    <color name="pla_divider_dark">#DEDEDE</color>
-    <!--endregion-->
-
-    <!--region 边框颜色-->
-    <color name="pla_border_light">#ABABAB</color>
-    <color name="pla_border_middle">#F3F3F3</color>
-    <color name="pla_border_dark">#F2F2F2</color>
-    <!--endregion-->
-
-    <!--region 主题颜色-->
+    <!--region **********主题颜色**********-->
     <color name="primary">#11D180</color>
     <color name="onPrimary">#FFFFFF</color>
     <color name="primaryContainer">#11D180</color>
     <color name="onPrimaryContainer">#00210F</color>
     <color name="secondary">#4F6354</color>
     <color name="onSecondary">#FFFFFF</color>
-    <color name="secondaryContainer">#D1E8D5</color>
+    <color name="secondaryContainer">#11D180</color>
     <color name="onSecondaryContainer">#11D180</color>
     <color name="tertiary">#3B6470</color>
     <color name="onTertiary">#FFFFFF</color>

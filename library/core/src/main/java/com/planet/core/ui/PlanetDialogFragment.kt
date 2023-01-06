@@ -24,14 +24,14 @@ abstract class PlanetDialogFragment<V : ViewDataBinding>(@LayoutRes contentLayou
 
     protected lateinit var binding: V
     protected open var mWindow: Window? = null
-    protected var screenInfoPair: Pair<Int, Int>? = null
+    private var screenInfoPair: Pair<Int, Int>? = null
     private val mTag: String = this.javaClass.simpleName
 
     /**
      * 设置Dialog弹出动画
      *
-     * @return Int 动画样式style，可选[R.style.PlaBottomAnimationStyle],[R.style.PlaTopAnimationStyle],
-     * [R.style.PlaLeftAnimationStyle],[R.style.PlaRightAnimationStyle]
+     * @return Int 动画样式style，可选[R.style.BottomAnimationStyle],[R.style.TopAnimationStyle],
+     * [R.style.LeftAnimationStyle],[R.style.RightAnimationStyle]
      */
     abstract fun setupWindowAnimationStyle(): Int
 
@@ -59,7 +59,7 @@ abstract class PlanetDialogFragment<V : ViewDataBinding>(@LayoutRes contentLayou
         binding = view.let<View, V> { DataBindingUtil.bind(it)!! }.apply { lifecycleOwner = viewLifecycleOwner }
         mWindow = dialog?.window
         screenInfoPair = getScreenInfo()
-        setStyle(STYLE_NORMAL, R.style.PlaDialog)
+        setStyle(STYLE_NORMAL, R.style.Dialog)
         setupDialog()
         initData(savedInstanceState)
         initView(savedInstanceState)

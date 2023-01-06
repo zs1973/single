@@ -16,12 +16,8 @@ import com.planet.core.ui.PlanetDialogFragment
 abstract class BottomInDialogFragment<V : ViewDataBinding>(@LayoutRes contentLayout: Int) :
     PlanetDialogFragment<V>(contentLayout) {
 
-    override fun gravity(): Int {
-        return Gravity.BOTTOM
-    }
+    override fun gravity() = Gravity.BOTTOM
 
-    override fun setupWindowAnimationStyle(): Int {
-        return R.style.PlaBottomAnimationStyle
-    }
+    override fun setupWindowAnimationStyle() = R.style.BottomAnimationStyle
 
 }

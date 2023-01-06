@@ -63,7 +63,7 @@ fun Dialog.setMaxWidth(
             }
         }
         attributes = lp
-        setBackgroundDrawableResource(R.color.transparent)
+        setBackgroundDrawableResource(R.color.pla_transparent)
     }
 }
 

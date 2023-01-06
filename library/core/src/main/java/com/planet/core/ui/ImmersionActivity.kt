@@ -58,7 +58,7 @@ abstract class ImmersionActivity<V : ViewDataBinding> : PlanetActivity<V>() {
     open fun fitWindow() = true
 
     /**
-     * 子类复写次方法返回自己的状态栏颜色，必须是R.color.xx形式
+     * 子类复写此方法返回自己的状态栏颜色，必须是R.color.xx形式
      */
     open fun colorRes() = R.color.primary
 

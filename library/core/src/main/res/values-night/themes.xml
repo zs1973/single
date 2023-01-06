@@ -1,45 +1,54 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
 
-<!--    <style name="Theme.Quick" parent="Theme.Material3.DayNight.NoActionBar">-->
-<!--        <item name="colorPrimary">@color/planet_primary</item>-->
-<!--        <item name="colorPrimaryVariant">@color/planet_primary</item>-->
-<!--        <item name="colorOnPrimary">@color/planet_primary</item>-->
-<!--        <item name="android:background">@color/planet_background</item>-->
-<!--        <item name="android:textCursorDrawable">@drawable/planet_text_cursor</item>-->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/planet_transparent</item>-->
-<!--    </style>-->
-
+    <!--https://www.jianshu.com/p/06a3bbb7ce79-->
+    <!--https://www.jianshu.com/p/e73d2f2556a8-->
+    <!--颜色用途介绍：https://m3.material.io/styles/color/the-color-system/color-roles-->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
-        <item name="android:statusBarColor">@color/pla_status_bar_color</item>
+
+        <!--***********************用于整个UI的关键组件，例如FAB、突出的按钮、活动状态以及升高表面的色调***********************-->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/onPrimary</item>
         <item name="colorPrimaryContainer">@color/primaryContainer</item>
         <item name="colorOnPrimaryContainer">@color/onPrimaryContainer</item>
+
+        <!--***********************用于UI中不太突出的组件，如 filter chips***********************-->
         <item name="colorSecondary">@color/secondary</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
         <item name="colorSecondaryContainer">@color/secondaryContainer</item>
         <item name="colorOnSecondaryContainer">@color/onSecondaryContainer</item>
+
+        <!--***********************用于平衡主要颜色和次要颜色或提高对元素（例如输入字段）***********************-->
         <item name="colorTertiary">@color/tertiary</item>
         <item name="colorOnTertiary">@color/onTertiary</item>
         <item name="colorTertiaryContainer">@color/tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/onTertiaryContainer</item>
-        <item name="colorError">@color/error</item>
-        <item name="colorErrorContainer">@color/errorContainer</item>
-        <item name="colorOnError">@color/onError</item>
-        <item name="colorOnErrorContainer">@color/onErrorContainer</item>
+
+        <!--***********************输入框中的错误提示颜色***********************-->
+<!--        <item name="colorError">@color/error</item>-->
+<!--        <item name="colorErrorContainer">@color/errorContainer</item>-->
+<!--        <item name="colorOnError">@color/onError</item>-->
+<!--        <item name="colorOnErrorContainer">@color/onErrorContainer</item>-->
+
         <item name="android:colorBackground">@color/background</item>
         <item name="colorOnBackground">@color/onBackground</item>
+
         <item name="colorSurface">@color/surface</item>
         <item name="colorOnSurface">@color/onSurface</item>
         <item name="colorSurfaceVariant">@color/surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/onSurfaceVariant</item>
-        <item name="colorOutline">@color/outline</item>
-        <item name="colorOnSurfaceInverse">@color/inverseOnSurface</item>
-        <item name="colorSurfaceInverse">@color/inverseSurface</item>
-        <item name="colorPrimaryInverse">@color/primaryInverse</item>
-        <!--配置各个组件的样式-->
+
+        <!--***********************边框颜色***********************-->
+        <item name="colorOutline">@color/pla_light_gray</item>
+
+        <!--***********************突出显示如：Snack Bar***********************-->
+        <item name="colorOnSurfaceInverse">@color/inverseOnSurface</item>   <!--文字颜色-->
+        <item name="colorSurfaceInverse">@color/inverseSurface</item> <!--背景色-->
+        <item name="colorPrimaryInverse">@color/primaryInverse</item> <!--按钮颜色-->
+
+        <!--***********************配置各个组件的样式***********************-->
+        <item name="android:statusBarColor">@color/pla_status_bar_color</item>
         <item name="android:textCursorDrawable">@drawable/pla_text_cursor</item>
-        <item name="floatingActionButtonStyle">@style/PlaFloatActionButtonStyle</item>
-        <item name="toolbarStyle">@style/PlaToolBar</item>
+        <item name="floatingActionButtonStyle">@style/FloatActionButtonStyle</item>
+        <item name="toolbarStyle">@style/ToolBar</item>
     </style>
 </resources>

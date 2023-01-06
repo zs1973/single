@@ -36,7 +36,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tipText"
-                style="@style/PlaTextTitle.Tiny"
+                style="@style/TextTitle.Tiny"
                 android:layout_marginTop="6dp"
                 android:text="@string/pla_loading"
                 android:textColor="@color/onPrimary" />

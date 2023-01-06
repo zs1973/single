@@ -11,7 +11,7 @@ import androidx.annotation.Keep
  */
 @Keep
 data class ApiResponse<out T>(
-    var code: Int,
+    var errorCode: Int,
     val data: T?,
-    val message: String
+    val errorMsg: String
 )

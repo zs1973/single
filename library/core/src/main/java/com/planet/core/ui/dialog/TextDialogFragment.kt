@@ -12,25 +12,43 @@ import com.planet.core.databinding.PlaTextDialogBinding
  *日期：2022/03/29
  *邮箱：305562245@qq.com
  *谨记：想要完美时，完美即已不存在。
- *描述：将应用移出监控任务弹窗
- **/
-class TextDialogFragment(
+ *描述：文字提示弹窗
+ *
+ * @property mTitle String? 标题
+ * @property mContent String? 提示内容
+ * @property mCancelText String? 取消按钮文字
+ * @property mConfirmText String? 确定按钮文字
+ * @property mHideCancelBtn Boolean 是否隐藏取消按钮
+ * @property mConfirmClickListener OnConfirmClickListener? 确定按钮点击事件
+ * @property mCancelClickListener OnCancelClickListener? 取消按钮点击事件
+ * @property mContentBinding PlaTextDialogBinding  内容binding
+ * @constructor
+ */
+class TextDialogFragment private constructor(
     private val mTitle: String? = null,
     private val mContent: String? = null,
     private val mCancelText: String? = null,
     private val mConfirmText: String? = null,
+    private val mHideTitle: Boolean = false,
+    private val mHideCancelBtn: Boolean = false,
     private val mConfirmClickListener: OnConfirmClickListener? = null,
     private val mCancelClickListener: OnCancelClickListener? = null
 ) : SimpleDialogFragment() {
 
     private lateinit var mContentBinding: PlaTextDialogBinding
+
     override fun defaultWidthAndHeight(screenInfoPair: Pair<Int, Int>): Pair<Int, Int> {
         val width = screenInfoPair.first * 0.8
         return Pair(width.toInt(), WindowManager.LayoutParams.WRAP_CONTENT)
     }
 
     override fun initData(savedInstanceState: Bundle?) {
-        mContentBinding = DataBindingUtil.inflate(LayoutInflater.from(requireContext()), R.layout.pla_text_dialog, null, false)
+        mContentBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(requireContext()),
+            R.layout.pla_text_dialog,
+            null,
+            false
+        )
     }
 
     override fun observerData() {}
@@ -44,6 +62,8 @@ class TextDialogFragment(
         mConfirmText?.let { setConfirmText(it) }
         mConfirmClickListener?.let { setOnConfirmClickListener(mConfirmClickListener) }
         mCancelClickListener?.let { setOnCancelClickListener(mCancelClickListener) }
+        if(mHideTitle) hideTitle()
+        if (mHideCancelBtn) hideCancelBtn()
     }
 
     class Builder {
@@ -51,15 +71,28 @@ class TextDialogFragment(
         var content: String? = null
         var cancelText: String? = null
         var confirmText: String? = null
+        var hideTitle: Boolean = false
+        var hideCancelBtn: Boolean = false
         var confirmClickListener: OnConfirmClickListener? = null
         var cancelClickListener: OnCancelClickListener? = null
 
-        fun build() = TextDialogFragment(title, content, cancelText, confirmText, confirmClickListener, cancelClickListener)
+        fun build() = TextDialogFragment(
+            title,
+            content,
+            cancelText,
+            confirmText,
+            hideTitle,
+            hideCancelBtn,
+            confirmClickListener,
+            cancelClickListener
+        )
+
     }
 
     companion object {
         /**
-         * 带接收者的函数类型,这意味着我们需要向函数传递一个Builder类型的实例
+         * @param block Function1<Builder, Unit>
+         * @return TextDialogFragment
          */
         inline fun build(block: Builder.() -> Unit) = Builder().apply(block).build()
     }

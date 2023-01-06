@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,12 +9,60 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:gravity="center"
+        android:orientation="vertical"
         tools:context=".ui.MainActivity">
 
-        <Button
+        <TextView
+            android:id="@+id/result_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Switch style="@style/Switch" />
+
+        <CheckBox
+            style="@style/CheckBox"
+            android:layout_marginTop="20dp"
+            android:checked="false" />
+
+        <EditText
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/app_name"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn"
-            style="@style/PlaButtonPositive.Small"
+            style="@style/Button.Small.Primary"
+            android:layout_marginTop="20dp"
+            android:enabled="true"
+            android:text="@string/app_name" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Button.Normal.Primary"
+            android:layout_marginTop="20dp"
+            android:enabled="false"
+            android:text="@string/app_name" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Button.Big.Primary"
+            android:layout_marginTop="20dp"
+            android:enabled="true"
+            android:text="@string/app_name" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Button.Normal.Warning"
+            android:layout_marginTop="20dp"
+            android:enabled="false"
+            android:text="@string/app_name" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Button.Big.Warning"
+            android:layout_marginTop="20dp"
+            android:enabled="true"
             android:text="@string/app_name" />
 
     </LinearLayout>

@@ -13,10 +13,10 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolBar"
-            style="@style/PlaToolBar" />
+            style="@style/ToolBar" />
 
         <View
-            style="@style/PlaDivider.Light"
+            style="@style/Divider.Light"
             android:layout_width="match_parent"
             android:layout_height="1px" />
 

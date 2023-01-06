@@ -5,7 +5,6 @@ import android.view.View
 import android.view.WindowManager
 import com.planet.core.R
 import com.planet.core.databinding.PlaLoadingDialogBinding
-import com.planet.core.ui.PlanetDialogFragment
 
 /**
  *作者：张硕
@@ -14,7 +13,8 @@ import com.planet.core.ui.PlanetDialogFragment
  *谨记：想要完美时，完美即已不存在。
  *描述：
  **/
-class LoadingDialogFragment : PlanetDialogFragment<PlaLoadingDialogBinding>(R.layout.pla_loading_dialog) {
+class LoadingDialogFragment : CenterInDialogFragment<PlaLoadingDialogBinding>(R.layout.pla_loading_dialog) {
+
     override fun defaultWidthAndHeight(screenInfoPair: Pair<Int, Int>): Pair<Int, Int> {
         return Pair(
             WindowManager.LayoutParams.WRAP_CONTENT,

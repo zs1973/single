@@ -12,7 +12,6 @@ import androidx.annotation.LayoutRes
 import com.planet.core.R
 import com.planet.core.databinding.PlaDialogBinding
 import com.planet.core.ktx.click
-import com.planet.core.ui.PlanetDialogFragment
 
 /**
  *作者：张硕
@@ -21,7 +20,7 @@ import com.planet.core.ui.PlanetDialogFragment
  *谨记：想要完美时，完美即已不存在。
  *描述：
  **/
-abstract class SimpleDialogFragment : PlanetDialogFragment<PlaDialogBinding>(R.layout.pla_dialog) {
+abstract class SimpleDialogFragment : CenterInDialogFragment<PlaDialogBinding>(R.layout.pla_dialog) {
 
     private lateinit var mTitleTv: TextView
     private lateinit var mCancelBtn: Button
@@ -32,8 +31,6 @@ abstract class SimpleDialogFragment : PlanetDialogFragment<PlaDialogBinding>(R.l
     private lateinit var mOnConfirmClickListener: OnConfirmClickListener
 
     override fun defaultWidthAndHeight(screenInfoPair: Pair<Int, Int>): Pair<Int, Int>? = null
-
-    override fun setupWindowAnimationStyle(): Int = 0
 
     override fun initView(onSavedInstanceState: Bundle?) {
         mTitleTv = binding.titleTv
@@ -106,11 +103,11 @@ abstract class SimpleDialogFragment : PlanetDialogFragment<PlaDialogBinding>(R.l
         mOnConfirmClickListener = onConfirmClickListener
     }
 
-    open interface OnCancelClickListener {
+    interface OnCancelClickListener {
         fun onCancel()
     }
 
-    open interface OnConfirmClickListener {
+    interface OnConfirmClickListener {
         fun onConfirm(dialogFragment: SimpleDialogFragment)
     }
 

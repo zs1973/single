@@ -8,11 +8,12 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/contentTv"
-        style="@style/PlaTextTitle.Big"
+        style="@style/TextTitle.Big"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:minHeight="80dp"
         android:padding="20dp"
         tools:text="内容" />
+
 </layout>

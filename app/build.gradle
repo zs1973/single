@@ -151,6 +151,7 @@ dependencies {
     kapt(dep.hilt.hiltAndroidCompiler)
     implementation(dep.other.walle)
     implementation(dep.other.wechatsdk)
+    kapt(dep.room.compiler)
     //测试
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
@@ -160,6 +161,7 @@ dependencies {
 /*DataStoreProto相关配置*/
 protobuf {
     protoc {
+        //判断操作系统mac osx或者windows
         if (osdetector.os == "osx") {
             artifact = 'com.google.protobuf:protoc:3.14.0:osx-x86_64'
         } else {

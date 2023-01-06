@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!--region 圆角-->
-    <dimen name="pla_corner_radius_big">20dp</dimen>
-    <dimen name="pla_corner_radius_normal">15dp</dimen>
-    <dimen name="pla_corner_radius_small">10dp</dimen>
-    <dimen name="pla_corner_radius_tiny">6dp</dimen>
-    <dimen name="pla_corner_radius_super_tiny">4dp</dimen>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
+    <!--region **********圆角**********-->
+    <!--页面背景、view背景圆角角度-->
+    <dimen name="pla_bg_corner_radius_big">20dp</dimen>
+    <dimen name="pla_bg_corner_radius_normal">15dp</dimen>
+    <dimen name="pla_bg_corner_radius_small">10dp</dimen>
+    <dimen name="pla_bg_corner_radius_tiny">6dp</dimen>
+    <!--按钮、输入框圆角角度-->
+    <dimen name="pla_text_corner_radius_normal">8dp</dimen>
+    <dimen name="pla_text_corner_radius_small">4dp</dimen>
     <!--endregion-->
+
+   <!--region **********公共margin边距**********-->
     <dimen name="pla_layout_margin">20dp</dimen>
+    <dimen name="pla_layout_margin_start">20dp</dimen>
+    <dimen name="pla_layout_margin_end">20dp</dimen>
+    <dimen name="pla_layout_margin_top">20dp</dimen>
+    <dimen name="pla_layout_margin_bottom">20dp</dimen>
+   <!--endregion-->
+
+    <!--region **********公共padding边距**********-->
+    <dimen name="pla_layout_padding">20dp</dimen>
+    <dimen name="pla_layout_padding_start">20dp</dimen>
+    <dimen name="pla_layout_padding_end">20dp</dimen>
+    <dimen name="pla_layout_padding_top">20dp</dimen>
+    <dimen name="pla_layout_padding_bottom">20dp</dimen>
+    <!--endregion-->
 </resources>

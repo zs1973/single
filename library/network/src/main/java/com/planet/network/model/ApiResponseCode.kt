@@ -10,7 +10,7 @@ sealed class ApiResponseCode {
      */
     object Success : ApiResponseCode() {
         public override val code: Int
-            get() = 200
+            get() = 0
         override val name: String
             get() = "接口请求成功"
 

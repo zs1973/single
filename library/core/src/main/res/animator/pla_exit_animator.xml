@@ -7,10 +7,4 @@
         android:valueFrom="0"
         android:startOffset="100"
         android:valueTo="-1000" />
-<!--    <objectAnimator-->
-<!--        android:duration="300"-->
-<!--        android:propertyName="alpha"-->
-<!--        android:valueFrom="1.0"-->
-<!--        android:startOffset="80"-->
-<!--        android:valueTo="0.8" />-->
 </set>

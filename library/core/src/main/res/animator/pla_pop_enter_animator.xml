@@ -6,11 +6,4 @@
         android:propertyName="translationX"
         android:valueFrom="-1000"
         android:valueTo="0" />
-
-<!--    <objectAnimator-->
-<!--        android:duration="300"-->
-<!--        android:propertyName="alpha"-->
-<!--        android:valueFrom="0.0"-->
-<!--        android:valueTo="1.0"/>-->
-
 </set>

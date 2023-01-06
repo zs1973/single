@@ -16,12 +16,8 @@ import com.planet.core.ui.PlanetDialogFragment
 abstract class TopInDialogFragment<V : ViewDataBinding>(@LayoutRes contentLayout: Int) :
     PlanetDialogFragment<V>(contentLayout) {
 
-    override fun gravity(): Int {
-        return Gravity.TOP
-    }
+    override fun gravity() = Gravity.TOP
 
-    override fun setupWindowAnimationStyle(): Int {
-        return R.style.PlaTopAnimationStyle
-    }
+    override fun setupWindowAnimationStyle() = R.style.TopAnimationStyle
 
 }

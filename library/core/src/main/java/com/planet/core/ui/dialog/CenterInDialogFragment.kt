@@ -15,8 +15,8 @@ import com.planet.core.ui.PlanetDialogFragment
 abstract class CenterInDialogFragment<V : ViewDataBinding>(@LayoutRes contentLayout: Int) :
     PlanetDialogFragment<V>(contentLayout) {
 
-    override fun gravity(): Int {
-        return Gravity.CENTER
-    }
+    override fun gravity() = Gravity.CENTER
+
+    override fun setupWindowAnimationStyle() = 0
 
 }
