@@ -157,11 +157,12 @@ dep.other = other
 ext.dep = dep
 
 def build_versions = [:]
-build_versions.applicationId = "com.planet.planetsingle"
+build_versions.namespace = "com.planet.single"
+build_versions.applicationId = "com.planet.single"
 build_versions.compileSdk = 33
 build_versions.minSdk = 23
 build_versions.targetSdk = 29
-build_versions.versionCode = 15
-build_versions.versionName = "0.3.2"
+build_versions.versionCode = 1
+build_versions.versionName = "1.0"
 build_versions.jvmTarget = "1.8"
 ext.build_versions = build_versions

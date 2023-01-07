@@ -1,7 +1,7 @@
 package com.planet.single.repo.local.database.dao
 
 import androidx.room.*
-import com.planet.single.repo.local.database.entities.App
+import com.planet.single.repo.local.database.table.App
 import kotlinx.coroutines.flow.Flow
 
 /**

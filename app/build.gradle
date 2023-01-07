@@ -10,7 +10,7 @@ apply plugin: 'com.google.protobuf'
 android {
     //https://developer.android.google.cn/studio/build/configure-app-module#set-namespace
     //此命名空间用作其生成的 R 和 BuildConfig 类的 Java 或 Kotlin 软件包名称
-    namespace 'com.planet.single'
+    namespace build_versions.namespace
     compileSdk build_versions.compileSdk
 
     defaultConfig {
@@ -54,10 +54,10 @@ android {
             v2SigningEnabled true
         }
 
-//        debug {
-//            //测试微信登录需要使用此签名文件签名
-//            storeFile file("../debug.keystore")
-//        }
+        //debug {
+        //    //测试微信登录需要使用此签名文件签名
+        //    storeFile file("../debug.keystore")
+        //}
 
     }
 

@@ -1,4 +1,4 @@
-package com.planet.single.repo.local.database.entities
+package com.planet.single.repo.local.database.table
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

@@ -3,7 +3,7 @@ package com.planet.single.repo.local.database
 import android.content.Context
 import androidx.room.*
 import com.planet.single.repo.local.database.dao.AppDao
-import com.planet.single.repo.local.database.entities.App
+import com.planet.single.repo.local.database.table.App
 
 /**
  *作者：张硕
