@@ -128,7 +128,7 @@
 
     <style name="Button.Small">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_height">30dp</item>
         <item name="cornerRadius">@dimen/pla_text_corner_radius_small</item>
         <item name="android:textSize">12sp</item>
     </style>
@@ -159,6 +159,23 @@
     <style name="Button.Big.Primary">
         <item name="android:backgroundTint">@drawable/pla_selector_btn_primary_bg</item>
     </style>
+
+    <!--次级按钮如：取消按钮-->
+    <style name="Button.Small.Secondary">
+        <item name="android:textColor">@drawable/pla_selector_btn_secondary_text_color</item>
+        <item name="android:backgroundTint">@drawable/pla_selector_btn_secondary_bg</item>
+    </style>
+
+    <style name="Button.Normal.Secondary">
+        <item name="android:textColor">@drawable/pla_selector_btn_secondary_text_color</item>
+        <item name="android:backgroundTint">@drawable/pla_selector_btn_secondary_bg</item>
+    </style>
+
+    <style name="Button.Big.Secondary">
+        <item name="android:textColor">@drawable/pla_selector_btn_secondary_text_color</item>
+        <item name="android:backgroundTint">@drawable/pla_selector_btn_secondary_bg</item>
+    </style>
+
     <!--警告、错误按钮-->
     <style name="Button.Small.Warning">
         <item name="android:backgroundTint">@drawable/pla_selector_btn_warning_bg</item>

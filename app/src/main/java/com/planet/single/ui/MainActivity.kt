@@ -31,7 +31,7 @@ class MainActivity : ImmersionActivity<ActivityMainBinding>() {
                 content = "内容"
                 cancelText = "取消"
                 confirmText = "确定"
-                hideCancelBtn = true
+                hideCancelBtn = false
                 confirmClickListener = object : SimpleDialogFragment.OnConfirmClickListener {
                     override fun onConfirm(dialogFragment: SimpleDialogFragment) {
                         dialogFragment.dismiss()

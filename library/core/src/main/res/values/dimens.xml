@@ -2,9 +2,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
     <!--region **********圆角**********-->
     <!--页面背景、view背景圆角角度-->
-    <dimen name="pla_bg_corner_radius_big">20dp</dimen>
-    <dimen name="pla_bg_corner_radius_normal">15dp</dimen>
-    <dimen name="pla_bg_corner_radius_small">10dp</dimen>
+    <dimen name="pla_bg_corner_radius_big">12dp</dimen>
+    <dimen name="pla_bg_corner_radius_normal">8dp</dimen>
+    <dimen name="pla_bg_corner_radius_small">4dp</dimen>
     <dimen name="pla_bg_corner_radius_tiny">6dp</dimen>
     <!--按钮、输入框圆角角度-->
     <dimen name="pla_text_corner_radius_normal">8dp</dimen>

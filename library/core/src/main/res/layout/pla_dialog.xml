@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -50,7 +49,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancelBtn"
-                style="@style/Button.Normal.Warning"
+                style="@style/Button.Normal.Secondary"
                 android:layout_width="0dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"

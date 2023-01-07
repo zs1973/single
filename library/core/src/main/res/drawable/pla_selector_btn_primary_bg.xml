@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:alpha="0.12" android:color="?attr/colorOnSurface" android:state_enabled="false" />
+    <item android:alpha="0.06" android:color="?attr/colorOnSurface" android:state_enabled="false" />
     <item android:color="?attr/colorPrimary" android:state_pressed="false"/>
-    <item android:color="#11BE75" android:state_pressed="true" />
+    <item android:color="#12C57A" android:state_pressed="true" />
 </selector>
