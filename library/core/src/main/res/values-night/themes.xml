@@ -24,11 +24,12 @@
         <item name="colorOnTertiaryContainer">@color/onTertiaryContainer</item>
 
         <!--***********************输入框中的错误提示颜色***********************-->
-<!--        <item name="colorError">@color/error</item>-->
-<!--        <item name="colorErrorContainer">@color/errorContainer</item>-->
-<!--        <item name="colorOnError">@color/onError</item>-->
-<!--        <item name="colorOnErrorContainer">@color/onErrorContainer</item>-->
+        <item name="colorError">@color/error</item>
+        <item name="colorErrorContainer">@color/errorContainer</item>
+        <item name="colorOnError">@color/onError</item>
+        <item name="colorOnErrorContainer">@color/onErrorContainer</item>
 
+        <!--Activity Fragment界面背景色-->
         <item name="android:colorBackground">@color/background</item>
         <item name="colorOnBackground">@color/onBackground</item>
 
