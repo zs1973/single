@@ -21,7 +21,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 /**
- * 设置Shape able ImageView的单个圆角或者所有圆角
+ * 设置ShapeableImageView的单个圆角或者所有圆角
  *
  * @param imageView         被设置的Shape able ImageView
  * @param radius            统一设置四个角的圆角

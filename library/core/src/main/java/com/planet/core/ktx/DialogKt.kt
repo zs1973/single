@@ -1,4 +1,5 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "deprecated")
+
 package com.planet.core.ktx
 
 import android.app.Activity
@@ -31,11 +32,11 @@ fun DialogFragment.showToast(@StringRes text: Int) {
 }
 
 fun DialogFragment.logi(tag: String, content: String) {
-    LogUtils.logi(tag,content)
+    LogUtils.logi(tag, content)
 }
 
 fun DialogFragment.loge(tag: String, content: String) {
-    LogUtils.loge(tag,content)
+    LogUtils.loge(tag, content)
 }
 
 /**
@@ -56,10 +57,10 @@ fun Dialog.setMaxWidth(
             0 -> {
                 val displayMetrics = context.resources.displayMetrics
                 val maxWidth = min(displayMetrics.widthPixels, displayMetrics.heightPixels)
-                lp.width = (maxWidth * percent).toInt() - marginHorizontal.dp
+                lp.width = (maxWidth * percent).toInt() - marginHorizontal.dp2px
             }
             else -> {
-                lp.width = width.dp - marginHorizontal.dp
+                lp.width = width.dp2px - marginHorizontal.dp2px
             }
         }
         attributes = lp
@@ -99,10 +100,10 @@ fun BottomSheetDialogFragment.setMaxWidth(
                 0 -> {
                     val displayMetrics = context.resources.displayMetrics
                     val maxWidth = min(displayMetrics.widthPixels, displayMetrics.heightPixels)
-                    lp.width = (maxWidth * percent).toInt() - marginHorizontal.dp
+                    lp.width = (maxWidth * percent).toInt() - marginHorizontal.dp2px
                 }
                 else -> {
-                    lp.width = width.dp - marginHorizontal.dp
+                    lp.width = width.dp2px - marginHorizontal.dp2px
                 }
             }
             attributes = lp
@@ -149,23 +150,16 @@ fun Activity.alert(block: AlertDialog.Builder.() -> Unit): AlertDialog {
     return builder.show()
 }
 
-fun AlertDialog.Builder.yes(
-    text: String,
-    block: AlertDialog.() -> Unit = {}
-) {
+fun AlertDialog.Builder.yes(text: String, block: AlertDialog.() -> Unit = {}) {
     setPositiveButton(text) { dialogInterface, _ -> (dialogInterface as AlertDialog).block() }
 }
-
 
 fun AlertDialog.Builder.yes(@StringRes text: Int, block: AlertDialog.() -> Unit = {}) {
     setPositiveButton(text) { dialogInterface, _ -> (dialogInterface as AlertDialog).block() }
 }
 
 
-fun AlertDialog.Builder.medium(
-    text: String,
-    block: AlertDialog.() -> Unit = {}
-) {
+fun AlertDialog.Builder.medium(text: String, block: AlertDialog.() -> Unit = {}) {
     setNeutralButton(text) { dialogInterface, _ -> (dialogInterface as AlertDialog).block() }
 }
 
@@ -173,19 +167,13 @@ fun AlertDialog.Builder.medium(@StringRes text: Int, block: AlertDialog.() -> Un
     setNeutralButton(text) { dialogInterface, _ -> (dialogInterface as AlertDialog).block() }
 }
 
-
-fun AlertDialog.Builder.no(
-    text: String,
-    block: AlertDialog.() -> Unit = {}
-) {
+fun AlertDialog.Builder.no(text: String, block: AlertDialog.() -> Unit = {}) {
     setNegativeButton(text) { dialogInterface, _ -> (dialogInterface as AlertDialog).block() }
 }
-
 
 fun AlertDialog.Builder.no(@StringRes text: Int, block: AlertDialog.() -> Unit = {}) {
     setNegativeButton(text) { dialogInterface, _ -> (dialogInterface as AlertDialog).block() }
 }
-
 
 /**
  * 进度对话框

@@ -9,18 +9,18 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
-fun <A : ViewDataBinding> Activity.setContent(@LayoutRes layout: Int): A {
+fun <V : ViewDataBinding> Activity.setContent(@LayoutRes layout: Int): V {
     return DataBindingUtil.setContentView(this, layout)
 }
 
-fun <A : ViewDataBinding> ViewGroup.inflate(@LayoutRes layout: Int): A {
+fun <V : ViewDataBinding> ViewGroup.inflate(@LayoutRes layout: Int): V {
     return DataBindingUtil.inflate(LayoutInflater.from(context), layout, this, false)
 }
 
-fun <A : ViewDataBinding> Context.inflate(@LayoutRes layout: Int): A {
+fun <V : ViewDataBinding> Context.inflate(@LayoutRes layout: Int): V {
     return DataBindingUtil.inflate(LayoutInflater.from(this), layout, null, false)
 }
 
-fun <A : ViewDataBinding> View.bind(): A {
+fun <V : ViewDataBinding> View.bind(): V {
     return DataBindingUtil.bind(this)!!
 }

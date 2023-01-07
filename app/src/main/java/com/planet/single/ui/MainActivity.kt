@@ -3,6 +3,7 @@ package com.planet.single.ui
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.viewModels
+import com.planet.core.ktx.dp2px
 import com.planet.core.ui.ImmersionActivity
 import com.planet.core.ui.dialog.SimpleDialogFragment
 import com.planet.core.ui.dialog.TextDialogFragment
@@ -25,6 +26,8 @@ class MainActivity : ImmersionActivity<ActivityMainBinding>() {
     override fun listeners() {
         findViewById<Button>(R.id.btn).setOnClickListener {
             mVm.getKind()
+
+            val a = 1.dp2px
 
             TextDialogFragment.build {
                 title = "标题"

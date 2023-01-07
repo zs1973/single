@@ -1,23 +1,19 @@
 @file:Suppress("unused")
+
 package com.planet.core.ktx
 
 import android.content.res.Resources
 
-//<editor-fold desc="Dimension">
-
-/*converts dp value into px*/
-val Number.dp
+//<editor-fold desc="尺寸">
+val Number.dp2px
     get() = (this.toFloat() * Resources.getSystem().displayMetrics.density).toInt()
 
-/*converts sp value into px*/
-val Number.sp
+val Number.sp2px
     get() = (this.toFloat() * Resources.getSystem().displayMetrics.scaledDensity).toInt()
-
 //</editor-fold>
 
 
-//<editor-fold desc="Memory">
-
+// <editor-fold default state="collapsed" desc="内存">
 val Number.KB: Long
     get() = this.toLong() * 1024L
 
@@ -26,7 +22,8 @@ val Number.MB: Long
 
 val Number.GB: Long
     get() = this.MB * 1024
+// </editor-fold>
 
-//</editor-fold>
+
 
 

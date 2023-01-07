@@ -18,7 +18,13 @@ import com.planet.utils.DisplayUtil;
 @SuppressWarnings("unused")
 public class DrawableTextView extends AppCompatTextView {
 
+    /**
+     * 作为背景的drawable
+     */
     private final GradientDrawable mDrawable = new GradientDrawable();
+    /**
+     * 默认透明度
+     */
     private final int DEFAULT_ALPHA = 255;
 
     public DrawableTextView(Context context) {
@@ -49,22 +55,45 @@ public class DrawableTextView extends AppCompatTextView {
         mDrawable.setColor(solidColor);
     }
 
+    /**
+     * 设置背景边框的宽度和颜色
+     * @param strokeWidth 宽度
+     * @param strokeColor 颜色
+     * @return this
+     */
     public DrawableTextView setStroke(int strokeWidth, int strokeColor) {
         this.mDrawable.setStroke(DisplayUtil.dp2px(strokeWidth), strokeColor);
         return this;
     }
 
-
+    /**
+     * 设置背景填充颜色
+     *
+     * @param solidColor 色值
+     * @return this
+     */
     public DrawableTextView setSolidColor(int solidColor) {
         this.mDrawable.setColor(solidColor);
         return this;
     }
 
+    /**
+     * 设置背景圆角
+     *
+     * @param radius 圆角角度值
+     * @return this
+     */
     public DrawableTextView setRadius(int radius) {
         this.mDrawable.setCornerRadius(radius);
         return this;
     }
 
+    /**
+     * 设置文字颜色
+     *
+     * @param textColor 文字颜色
+     * @return this
+     */
     public DrawableTextView textColor(int textColor) {
         setTextColor(textColor);
         return this;
@@ -74,8 +103,12 @@ public class DrawableTextView extends AppCompatTextView {
         return mDrawable;
     }
 
+    /**
+     * 设置背景drawable的透明度
+     * @param alpha 透明度 0-255
+     */
     public void setBackgroundAlpha(int alpha){
-        if(alpha>=0&&alpha<=255){
+        if(alpha>=0&&alpha<=DEFAULT_ALPHA){
             mDrawable.setAlpha(alpha);
         }
     }
