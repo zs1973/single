@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.planet.core.ktx
 
 import android.app.Activity
@@ -23,11 +25,11 @@ fun AppCompatActivity.showToast(@StringRes text: Int) {
 }
 
 fun AppCompatActivity.logi(tag: String, content: String) {
-    LogUtils.logi(tag,content)
+    LogUtils.logi(tag, content)
 }
 
 fun AppCompatActivity.loge(tag: String, content: String) {
-    LogUtils.loge(tag,content)
+    LogUtils.loge(tag, content)
 }
 
 inline fun <reified T : Activity> AppCompatActivity.navTo() {
