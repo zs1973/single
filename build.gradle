@@ -17,7 +17,7 @@ plugins {
     id 'com.google.protobuf' version '0.8.12' apply false
 }
 
-apply from: 'dep.gradle'
+apply from: 'config.gradle'
 
 task clean(type: Delete) {
     delete rootProject.buildDir

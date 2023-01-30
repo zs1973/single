@@ -27,6 +27,7 @@ abstract class PlanetFragment<V : ViewDataBinding>(@LayoutRes layoutRes: Int) : 
     private var firstLoad = true
     private val dataDelay = Handler(Looper.getMainLooper())
     private var mApplicationProvider: ViewModelProvider? = null
+    private val delay = Handler(Looper.getMainLooper())
 
     protected open val mTag: String = javaClass.simpleName
 
@@ -51,11 +52,11 @@ abstract class PlanetFragment<V : ViewDataBinding>(@LayoutRes layoutRes: Int) : 
         //懒加载
         if (openLazyLoad()) {
             if (firstLoad) {
-                doBusiness()
+                delay.postDelayed({doBusiness()},200)
                 firstLoad = false
             }
         } else {
-            doBusiness()
+            delay.postDelayed({doBusiness()},200)
         }
         //友盟统计
         MobclickAgent.onPageStart(mTag)
